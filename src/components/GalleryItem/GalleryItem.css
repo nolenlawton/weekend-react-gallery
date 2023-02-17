@@ -8,4 +8,14 @@ img {
 .description {
     width: 200px;
     height: 200px;
+    margin: auto;
+    padding-top: 50px ;
+}
+
+.hide {
+    visibility: hidden
+}
+
+.show {
+    visibility: visible;
 }

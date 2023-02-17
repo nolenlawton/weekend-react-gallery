@@ -16,11 +16,22 @@ function App() {
     axios.get('/gallery')
       .then((response) => {
         setGalleryList(response.data);
+        console.log(response.data)
       }).catch((err) => {
         console.error('GET error', err);
       });
-
   };
+
+  const changeView = (item) => {
+    axios.put(`/gallery/${item.id}`, item)
+            .then((response) => {
+                getList();
+            })
+            .catch((err) => {
+                alert("Error Changing View");
+                console.log(err);
+            });
+  }
 
     return (
       <div className="App">
@@ -28,7 +39,7 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
 
-          <GalleryList getList={getList} galleryList={galleryList} />
+          <GalleryList changeView={changeView} galleryList={galleryList} />
 
       </div>
     );

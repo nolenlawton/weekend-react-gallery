@@ -1,29 +1,30 @@
 import './GalleryItem.css'
 
-function GalleryItem({item}) {
+function GalleryItem({item, changeView}) {
 
     const showDescription = () => {
-        item.image = !item.image
-        GalleryItem(item)
+        console.log('show item', item)
+        changeView(item)
     }
 
-    console.log(item.image)
 
     if (item.image === true) {
         return(
-        <>
+        <div>
             <img onClick={showDescription} src={item.path}/>
-        </>
-        )
-    }
-    else if (item.image === false){
-        console.log('description')
-        return(
-        <div className='description'>
-            {item.description}
+            <div><button>Like</button> {item.likes}</div>
         </div>
         )
     }
+    else if (item.image === false) {
+        return(
+        <div>
+            <div className='description' onClick={showDescription}>{item.description}</div>
+            <div><button>Like</button> {item.likes}</div>
+        </div>
+        )
+    }
+   
 }
 
 export default GalleryItem
