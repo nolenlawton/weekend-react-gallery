@@ -26,7 +26,7 @@ router.put('/like/:id', (req, res) => {
       console.error('Error in PUT router', err);
       res.sendStatus(501);
     });
-});
+  });
 
 router.get('/gallery', (req, res) => {
     const sqlText = `SELECT * FROM "galleryTable" ORDER BY ID;`;
@@ -72,6 +72,23 @@ router.post('/newPhoto', (req, res) => {
       .catch((err) => {
         console.error('Error in router POST', err);
         res.sendStatus(501);
+      });
+  });
+
+router.delete('/delete/:id', (req, res) => {
+  const id = req.params.id;
+  
+  let sqlQuery = `
+    DELETE FROM "galleryTable" WHERE id = $1;
+    `;
+  
+  pool.query(sqlQuery, [id])
+      .then(() => {
+        res.sendStatus(201);
+      })
+      .catch((error) => {
+        console.log(error);
+        res.sendStatus(500);
       });
   });
 
