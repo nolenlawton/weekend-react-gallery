@@ -3,19 +3,38 @@ img {
     width: 200px;
     height: 200px;
     margin: auto;
+    border-radius: 8px;
+    border: 2px solid grey;
 }
 
 .description {
     width: 200px;
-    height: 200px;
+    height: 100px;
     margin: auto;
-    padding-top: 50px ;
+    margin-bottom: 4px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 8px;
+    border: 2px solid grey;
 }
 
-.hide {
-    visibility: hidden
+.like {
+    border-radius: 100%;
+    border: 2px solid grey;
+    font-size: 24px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    color: grey;
 }
 
-.show {
-    visibility: visible;
+.liked{
+        border-radius: 100%;
+        border: 2px solid grey;
+        font-size: 24px;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        color: white;
+        background-color: lightcoral;
 }

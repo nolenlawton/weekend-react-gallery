@@ -16,11 +16,24 @@ function App() {
     axios.get('/gallery')
       .then((response) => {
         setGalleryList(response.data);
-        console.log(response.data)
+        console.log('get', response.data)
       }).catch((err) => {
         console.error('GET error', err);
       });
   };
+
+  const likePhoto = (item) => {
+    console.log(item)
+    axios.put(`/like/${item.id}`, item)
+        .then((response) => {
+    
+            getList();
+        })
+        .catch((err) => {
+            alert("Error Liking Photo");
+            console.log(err);
+        });
+};
 
   const changeView = (item) => {
     axios.put(`/gallery/${item.id}`, item)
@@ -39,7 +52,7 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
 
-          <GalleryList changeView={changeView} galleryList={galleryList} />
+          <GalleryList changeView={changeView} likePhoto={likePhoto} galleryList={galleryList} />
 
       </div>
     );

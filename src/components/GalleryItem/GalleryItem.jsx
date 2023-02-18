@@ -1,10 +1,14 @@
 import './GalleryItem.css'
 
-function GalleryItem({item, changeView}) {
+function GalleryItem({item, changeView, likePhoto}) {
 
     const showDescription = () => {
-        console.log('show item', item)
         changeView(item)
+    }
+
+    const like = () => {
+        console.log('like', item)
+        likePhoto(item)
     }
 
 
@@ -12,7 +16,7 @@ function GalleryItem({item, changeView}) {
         return(
         <div>
             <img onClick={showDescription} src={item.path}/>
-            <div><button>Like</button> {item.likes}</div>
+            <div><button className={item.isLiked ? 'liked': 'like'} onClick={like}>♡</button> {item.likes}</div>
         </div>
         )
     }
@@ -20,7 +24,7 @@ function GalleryItem({item, changeView}) {
         return(
         <div>
             <div className='description' onClick={showDescription}>{item.description}</div>
-            <div><button>Like</button> {item.likes}</div>
+            <div><button className={item.isLiked ? 'liked': 'like'} onClick={like}>♡</button> {item.likes}</div>
         </div>
         )
     }
