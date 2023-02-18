@@ -2,7 +2,7 @@ CREATE TABLE "galleryTable" (
 	"id" SERIAL PRIMARY KEY,
 	"path" VARCHAR(250),
 	"description" VARCHAR(500),
-	"likes" INTEGER,
+	"likes" INTEGER DEFAULT '0',
 	"image" BOOLEAN DEFAULT TRUE,
 	"isLiked" BOOLEAN DEFAULT FALSE
 );

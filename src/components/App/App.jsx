@@ -53,17 +53,26 @@ function App() {
         });
   }
 
+  const deletePhoto = (id) => {
+    axios.delete(`/delete/${id}`)
+        .then((response) => {
+            getList();
+        })
+        .catch((err) => {
+            alert("Error Deleting List Items");
+            console.log(err);
+        });
+  };
 
-
-    return (
+  return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
           <PhotoForm addPhoto={addPhoto} />
-          <GalleryList changeView={changeView} likePhoto={likePhoto} galleryList={galleryList} />
+          <GalleryList deletePhoto={deletePhoto} changeView={changeView} likePhoto={likePhoto} galleryList={galleryList} />
       </div>
-    );
+  );
 }
 
 export default App;
