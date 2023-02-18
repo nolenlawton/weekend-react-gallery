@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './PhotoForm.css'
+import Button from '@mui/material/Button';
 
 function PhotoForm({addPhoto}) {
     const [newPhoto, setNewPhoto] = useState('');
@@ -43,7 +44,7 @@ function PhotoForm({addPhoto}) {
                     />
                 </div>
 
-                <button id='addButton' type='submit' >Add To Gallery </button>
+                <Button id='addButton' type='submit' >Add To Gallery </Button>
             </form>
         </div>
     )
