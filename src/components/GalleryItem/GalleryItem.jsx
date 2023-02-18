@@ -1,16 +1,13 @@
 import './GalleryItem.css'
 
 function GalleryItem({item, changeView, likePhoto}) {
-
     const showDescription = () => {
         changeView(item)
     }
 
     const like = () => {
-        console.log('like', item)
         likePhoto(item)
     }
-
 
     if (item.image === true) {
         return(
@@ -28,7 +25,6 @@ function GalleryItem({item, changeView, likePhoto}) {
         </div>
         )
     }
-   
 }
 
 export default GalleryItem
