@@ -18,7 +18,7 @@ form {
 input , button {
     border-radius: 8px;
     border: 1px solid grey;
-    padding: 4px;
+    padding: 10px;
 }
 
 #addButton {
