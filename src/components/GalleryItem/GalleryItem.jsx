@@ -1,5 +1,4 @@
 import './GalleryItem.css'
-import trash from './trash.png'
 
 function GalleryItem({item, changeView, likePhoto, deletePhoto}) {
     const showDescription = () => {
@@ -20,7 +19,7 @@ function GalleryItem({item, changeView, likePhoto, deletePhoto}) {
             <img onClick={showDescription} src={item.path}/>
             <div>
                 <button className={item.isLiked ? 'liked': 'like'} onClick={like}>♡</button>
-                {item.likes}
+                <span className='number'>{item.likes}</span>
             </div>
         </div>
         )
@@ -36,7 +35,7 @@ function GalleryItem({item, changeView, likePhoto, deletePhoto}) {
             </div>
             <div>
                 <button className={item.isLiked ? 'liked': 'like'} onClick={like}>♡</button> 
-                {item.likes}
+                <span className='number'>{item.likes}</span>
             </div>
         </div>
         )

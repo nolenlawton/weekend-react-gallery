@@ -30,6 +30,7 @@ img {
     cursor: pointer;
     color: #92acca;
     background-color: #d3e5f9;
+    margin-right: 10px;
 }
 
 .liked{
@@ -41,6 +42,7 @@ img {
         cursor: pointer;
         color: rgb(192, 90, 90);
         background-color: lightcoral;
+        margin-right: 10px;
 }
 
 .delete {
@@ -48,4 +50,9 @@ img {
     margin-top: 20px;
     cursor: pointer;
     color: white;
+}
+
+.number {
+    color: #92acca;
+    border-radius: 100%;
 }
